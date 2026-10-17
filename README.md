@@ -112,10 +112,11 @@ Explores localized hardware store throughput and branch-level performance:
 ---
 
 ## 📁 Repository Structure
+```
 amazon-sales-etl-pipeline/
 │
-├── 📄 README.md <- Project Architecture & Documentation
-├── 🐍 real data.py <- Core ETL Logic, Data Pipeline & Dashboard Generator
+├── 📄 README.md                    # Project Architecture & Documentation
+├── 🐍 real data.py                 # Core ETL Logic & Dashboard Generator
 ├── 🐍 validate_data.py             # Automated Data Quality & Validation Module
 ├── 🐍 run_pipeline.py              # Pipeline Orchestration & Execution Script
 ├── 🐳 Dockerfile                   # Containerization Blueprint
@@ -123,29 +124,27 @@ amazon-sales-etl-pipeline/
 ├── 📋 requirements.txt             # Python Dependencies
 │
 ├── 📂 Raw Datasets
-│ ├── Amazon dataset csv.csv <- Source Global Amazon Sales Records
-│ └── Computer parts Trancsaction.csv <- Source Hardware Store Transactions
+│   ├── Amazon dataset csv.csv      # Source Global Amazon Sales Records
+│   └── Computer parts Trancsaction.csv.csv # Source Hardware Store Transactions
 │
 ├── 📂 Silver Layer (Cleansed)
-│ ├── silver_amazon_data.csv <- Normalized Amazon Schema
-│ └── silver_computer_sales.csv <- Normalized Hardware Store Schema
+│   ├── silver_amazon_data.csv      # Normalized Amazon Schema
+│   └── silver_computer_sales.csv   # Normalized Hardware Store Schema
 │
 ├── 📂 Gold Layer (Aggregations)
-│ ├── gold_category_sales.csv <- Product Category Metrics
-│ ├── gold_city_sales.csv <- Spatial City Revenue Distribution
-│ ├── gold_brand_performance.csv <- Brand Performance Indices
-│ ├── gold_monthly_trend.csv <- Time-Series Trend Aggregations
-│ ├── gold_payment_summary.csv <- Payment Vector Metrics
-│ └── gold_location_sales.csv <- Retail Branch Breakdown
+│   ├── gold_category_sales.csv     # Product Category Metrics
+│   ├── gold_city_sales.csv         # Spatial City Revenue Distribution
+│   ├── gold_brand_performance.csv  # Brand Performance Indices
+│   ├── gold_monthly_trend.csv      # Time-Series Trend Aggregations
+│   ├── gold_payment_summary.csv    # Payment Vector Metrics
+│   └── gold_location_sales.csv     # Retail Branch Breakdown
 │
 └── 📂 Business Dashboards
-├── amazon_etl_dashboard.png <- Executive Amazon BI Dashboard
-└── etl_full_analysis_dashboard.png <- Hardware Retail Analytics Suite
-
-text
+    ├── amazon_etl_dashboard.png    # Executive Amazon BI Dashboard
+    └── etl_full_analysis_dashboard.png # Hardware Retail Analytics Suite
 
 
----
+```
 
 ## 🧰 Technology Stack
 
@@ -153,9 +152,8 @@ text
 | :--- | :--- |
 | **Python 3.9+** | Core data engineering runtime and automation workflow |
 | **Pandas** | Ingestion, data manipulation, missing value imputation, and Gold aggregation |
-| **Matplotlib** | Multi-panel dashboard composition, subplot styling, and custom charting |
-| **Seaborn** | Statistical visual aesthetics and distribution rendering |
-| **CSV** | Structured intermediate storage for Silver and Gold layers |
+| **Matplotlib / Seaborn** | Multi-panel dashboard composition, subplot styling, and visualization |
+| **Docker** | Containerization, environment isolation, and reproducible execution |
 | **Git / GitHub** | Source code management, documentation, and version control |
 
 ---
