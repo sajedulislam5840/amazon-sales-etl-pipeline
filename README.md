@@ -30,6 +30,7 @@ The framework integrates two distinct retail domains: **Global Amazon E-Commerce
 ---
 
 ## 🏗️ Data Engineering Architecture
+```
 ┌────────────────────────────────────────────────────────────┐
 │ RAW DATA SOURCES │
 │ │
@@ -74,7 +75,7 @@ The framework integrates two distinct retail domains: **Global Amazon E-Commerce
 └────────────────────────────────────────────────────────────┘
 
 text
-
+```
 
 ### Layer Specifications
 
@@ -115,6 +116,11 @@ amazon-sales-etl-pipeline/
 │
 ├── 📄 README.md <- Project Architecture & Documentation
 ├── 🐍 real data.py <- Core ETL Logic, Data Pipeline & Dashboard Generator
+├── 🐍 validate_data.py             # Automated Data Quality & Validation Module
+├── 🐍 run_pipeline.py              # Pipeline Orchestration & Execution Script
+├── 🐳 Dockerfile                   # Containerization Blueprint
+├── 🐳 docker-compose.yml           # Multi-container Orchestration Config
+├── 📋 requirements.txt             # Python Dependencies
 │
 ├── 📂 Raw Datasets
 │ ├── Amazon dataset csv.csv <- Source Global Amazon Sales Records
