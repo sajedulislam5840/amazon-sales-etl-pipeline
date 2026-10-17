@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  etl-pipeline:
+    build: .
+    container_name: amazon_etl_container
+    volumes:
+      - .:/app
+    command: python "real data.py"
