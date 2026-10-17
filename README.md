@@ -187,24 +187,74 @@ Bash
 python "real data.py"
 [!TIP]
 Ensure both raw CSV files are placed in the root execution folder prior to running the script. Standardized datasets and dashboards will generate automatically upon script completion.
+```
+---
 
-💡 Business Impact & Engineering Value
-Cleansed Data Integrity: Establishes rigorous missing-value logic, data-type coercion, and deduplication rules.
-Domain Standardisation: Blends disparate global e-commerce metrics and localized offline store logs into a unified relational schema.
-Automated Dashboard Generation: Replaces manual spreadsheet charting with dynamic, Python-driven visual reporting.
-Granular Transparency: Uncovers high-margin category leaders, underperforming store branches, and payment method conversion rates.
-Enterprise Architecture: Structured following industry-standard Medallion design principles, ready for future migration into Cloud Data Warehouses (Snowflake, BigQuery).
-🔭 Future Enhancements
-🔍 Automated Validation: Implement great_expectations for automated schema testing and ETL execution logging.
-⚡ Incremental Ingestion: Add delta-loading capabilities for processing newly arriving daily transaction batches.
-🗄️ Database Integration: Connect pipeline outputs to a PostgreSQL / DuckDB analytical layer.
-📊 Interactive BI: Migrate dashboard renderings to dynamic Streamlit / Power BI user interfaces.
-🚀 Orchestration: Containerize execution with Docker and schedule daily runs via Apache Airflow.
-👨‍💻 Author Profile
-Sajedul Islam
-Computer Science & Engineering Student — BRAC University
-Former Data Preparation Specialist Intern — DataSynthis
+## 💡 Business Impact & Engineering Value
 
-🌐 Portfolio: sajedulislam5840.github.io/portfolio
-💼 LinkedIn: linkedin.com/in/sajedul-islam-data
-🐙 GitHub: @sajedulislam5840
+| Impact Pillar | Engineering Implementation | Strategic Business Value |
+| :--- | :--- | :--- |
+| **Architectural Rigor** | Multi-tier Medallion (Raw → Silver → Gold) pipeline | Enforces strict data lineage, source immutability, and 100% auditability |
+| **Domain Harmonization** | Universal schema normalization engine | Blends multi-channel e-commerce logs and localized POS retail records into a unified relational core |
+| **Automated Analytics** | Programmatic Seaborn & Matplotlib visualization suite | Eliminates manual spreadsheet reporting latency with dynamic, reproducible executive dashboards |
+| **Commercial Intelligence** | Dimensional KPI aggregation matrices | Identifies high-velocity product categories, geographic revenue hubs, and payment gateway conversion dynamics |
+| **Cloud Lakehouse Ready** | Decoupled, modular ETL pipeline logic | Simplifies future migration to enterprise cloud warehouses (*Snowflake, BigQuery, Databricks*) |
+
+---
+
+## 🔭 Technical Roadmap & Future Enhancements
+
+> [!IMPORTANT]
+> **Target Engineering Maturity:** Transitioning from local batch processing to an enterprise-grade, automated analytics lakehouse.
+
+* 🔍 **Data Quality & Validation Framework**  
+  Integrate `great_expectations` for automated schema enforcement, data contract validation, and automated ETL exception logging.
+
+* ⚡ **Incremental Processing & Delta Loading**  
+  Implement Change Data Capture (CDC) logic to process incoming transaction batches efficiently without full dataset re-scans.
+
+* 🗄️ **Analytical Storage Engine**  
+  Transition Silver and Gold layer persistence from flat CSV files to an embedded **DuckDB** / **PostgreSQL** OLAP data model for sub-second query performance.
+
+* 📊 **Interactive Self-Service BI**  
+  Deploy interactive visual analytics interfaces using **Streamlit** and **Power BI** for non-technical enterprise stakeholders.
+
+* 🚀 **Containerization & Production Orchestration**  
+  Containerize execution via **Docker** and automate DAG pipeline scheduling using **Apache Airflow**.
+
+---
+
+## 👨‍💻 Author Profile
+
+<table align="center" width="100%">
+  <tr>
+    <td width="65%" valign="top">
+      <h3>Sajedul Islam</h3>
+      <p><b>Computer Science & Engineering Student</b> · <i>BRAC University</i><br/>
+      <b>Former Data Preparation Specialist Intern</b> · <i>DataSynthis</i></p>
+      <p>Specializing in Data Engineering, Analytics Infrastructure, and transforming complex transactional datasets into actionable enterprise intelligence.</p>
+    </td>
+    <td width="35%" valign="middle" align="center">
+      <a href="https://sajedulislam5840.github.io/portfolio/">
+        <img src="https://img.shields.io/badge/Portfolio-Live_Site-1E3A8A?style=for-the-badge&logo=googlechrome&logoColor=white" width="150" />
+      </a>
+      <br/><br/>
+      <a href="https://www.linkedin.com/in/sajedul-islam-data/">
+        <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="150" />
+      </a>
+      <br/><br/>
+      <a href="https://github.com/sajedulislam5840">
+        <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" width="150" />
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
+<div align="center">
+
+**Retail Intelligence Engine**  
+<sub>Engineered with Rigor · Structured for Insight · Built for Decisions</sub>
+
+</div>
