@@ -161,36 +161,37 @@ amazon-sales-etl-pipeline/
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-* **Python 3.9** or higher installed on your machine
-* **Git** version control system
+- **Python 3.9+** or **Docker** installed on your machine
+- **Git** version control system
 
-### 1. Clone the Repository
+### Option A: Run via Docker (Recommended)
 ```bash
-git clone https://github.com/sajedulislam5840/amazon-sales-etl-pipeline.git
+# Clone the repository
+git clone [https://github.com/sajedulislam5840/amazon-sales-etl-pipeline.git](https://github.com/sajedulislam5840/amazon-sales-etl-pipeline.git)
 cd amazon-sales-etl-pipeline
-2. Configure Virtual Environment
-Windows:
 
-Bash
+# Build and run using Docker Compose
+docker-compose up --build
 
+Option B: Run Locally via Python
+# Clone the repository
+git clone [https://github.com/sajedulislam5840/amazon-sales-etl-pipeline.git](https://github.com/sajedulislam5840/amazon-sales-etl-pipeline.git)
+cd amazon-sales-etl-pipeline
+
+# Create and activate virtual environment
 python -m venv venv
-venv\Scripts\activate
-macOS / Linux:
+# On Windows: venv\Scripts\activate
+# On macOS/Linux: source venv/bin/activate
 
-Bash
+# Install dependencies
+pip install -r requirements.txt
 
-python3 -m venv venv
-source venv/bin/activate
-3. Install Dependencies
-Bash
+# Execute the automated orchestrator (Runs ETL + Data Validation)
+python run_pipeline.py
 
-pip install pandas matplotlib seaborn
-4. Execute the ETL Pipeline
-Bash
 
-python "real data.py"
 [!TIP]
-Ensure both raw CSV files are placed in the root execution folder prior to running the script. Standardized datasets and dashboards will generate automatically upon script completion.
+Ensure both raw CSV files are placed in the root execution folder prior to running the script. Standardized datasets and dashboards will generate automatically.
 ```
 ---
 
@@ -198,33 +199,39 @@ Ensure both raw CSV files are placed in the root execution folder prior to runni
 
 | Impact Pillar | Engineering Implementation | Strategic Business Value |
 | :--- | :--- | :--- |
-| **Architectural Rigor** | Multi-tier Medallion (Raw → Silver → Gold) pipeline | Enforces strict data lineage, source immutability, and 100% auditability |
-| **Domain Harmonization** | Universal schema normalization engine | Blends multi-channel e-commerce logs and localized POS retail records into a unified relational core |
-| **Automated Analytics** | Programmatic Seaborn & Matplotlib visualization suite | Eliminates manual spreadsheet reporting latency with dynamic, reproducible executive dashboards |
-| **Commercial Intelligence** | Dimensional KPI aggregation matrices | Identifies high-velocity product categories, geographic revenue hubs, and payment gateway conversion dynamics |
-| **Cloud Lakehouse Ready** | Decoupled, modular ETL pipeline logic | Simplifies future migration to enterprise cloud warehouses (*Snowflake, BigQuery, Databricks*) |
+| **Architectural Rigor** | Multi-tier Medallion (Raw → Silver → Gold) pipeline | Enforces strict data lineage, source immutability, and auditability |
+| **Data Reliability** | Automated validation scripts (`validate_data.py`) | Detects missing values, anomalies, and duplicates before reporting |
+| **Pipeline Automation** | Orchestration runner (`run_pipeline.py`) | Streamlines sequential script execution with single-command triggers |
+| **Production Ready** | Containerized environment via Docker | Ensures consistent execution across any local or cloud machine |
+| **Commercial Intelligence** | Dimensional KPI aggregation matrices | Identifies high-velocity product categories and revenue hubs |
 
 ---
 
 ## 🔭 Technical Roadmap & Future Enhancements
 
 > [!IMPORTANT]
-> **Target Engineering Maturity:** Transitioning from local batch processing to an enterprise-grade, automated analytics lakehouse.
+> **Current Engineering Maturity:** Upgraded to containerized batch execution with built-in data validation and pipeline orchestration.
 
-* 🔍 **Data Quality & Validation Framework**  
-  Integrate `great_expectations` for automated schema enforcement, data contract validation, and automated ETL exception logging.
+- ✅ **Data Quality & Validation Framework** *(Completed)*  
+  Integrated automated checks (`validate_data.py`) for anomaly detection and missing value verification before reporting.
 
-* ⚡ **Incremental Processing & Delta Loading**  
+- ✅ **Pipeline Automation & Orchestration** *(Completed)*  
+  Streamlined sequential script execution using an automated orchestration runner (`run_pipeline.py`).
+
+- ✅ **Containerization & Environment Isolation** *(Completed)*  
+  Packaged the entire workflow via **Docker** and **Docker Compose** for reproducible cross-platform execution.
+
+- ⚡ **Incremental Processing & Delta Loading**  
   Implement Change Data Capture (CDC) logic to process incoming transaction batches efficiently without full dataset re-scans.
 
-* 🗄️ **Analytical Storage Engine**  
-  Transition Silver and Gold layer persistence from flat CSV files to an embedded **DuckDB** / **PostgreSQL** OLAP data model for sub-second query performance.
+- 🗄️ **Analytical Storage Engine**  
+  Transition Silver and Gold layer persistence from flat CSV files to an embedded **DuckDB** or **PostgreSQL** OLAP data model for sub-second query performance.
 
-* 📊 **Interactive Self-Service BI**  
+- 📊 **Interactive Self-Service BI**  
   Deploy interactive visual analytics interfaces using **Streamlit** and **Power BI** for non-technical enterprise stakeholders.
 
-* 🚀 **Containerization & Production Orchestration**  
-  Containerize execution via **Docker** and automate DAG pipeline scheduling using **Apache Airflow**.
+- 🚀 **Advanced Orchestration & Cloud Deployment**  
+  Scale workflow orchestration using **Apache Airflow** or **Prefect** and deploy the pipeline to a cloud infrastructure.
 
 ---
 
